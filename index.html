@@ -1,0 +1,600 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050817">
+<meta name="description" content="Tarun Kumar — Aspiring AI Developer, technology learner and creator of personal projects.">
+<title>Tarun Kumar | TK by Tarun</title>
+
+<style>
+:root {
+  --bg:#050817;
+  --card:#0c1429;
+  --line:#1b2b50;
+  --purple:#8b5cf6;
+  --blue:#38bdf8;
+  --text:#f4f5ff;
+  --muted:#a6b2d0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  line-height:1.65;overflow-wrap:anywhere;
+}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+header{
+  position:sticky;top:0;z-index:100;
+  background:#050817ed;backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
+}
+nav{
+  max-width:1100px;margin:auto;padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:15px;
+}
+.logo{font-size:24px;font-weight:900;letter-spacing:-1px}
+.logo span,.gradient{
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  color:transparent;background-clip:text;-webkit-background-clip:text;
+}
+.navlinks{display:flex;gap:17px;align-items:center}
+.navlinks a{font-size:13px;color:var(--muted)}
+.navlinks a:hover{color:white}
+.menu{
+  display:none;background:var(--card);color:white;
+  border:1px solid var(--line);border-radius:9px;padding:6px 12px;
+}
+.wrap{max-width:1100px;margin:auto;padding:0 20px}
+.hero{
+  min-height:520px;display:grid;
+  grid-template-columns:1.1fr .9fr;align-items:center;gap:35px;
+  padding-top:65px;padding-bottom:65px;
+  background:radial-gradient(ellipse at 78% 40%,#5424a52c,transparent 45%);
+}
+.eyebrow{color:var(--blue);font-size:12px;letter-spacing:2px;font-weight:800}
+h1{font-size:clamp(38px,6vw,70px);line-height:1.08;letter-spacing:-2px;margin:12px 0}
+h2{font-size:clamp(25px,4vw,34px);line-height:1.2;margin:0 0 12px}
+h3{margin:8px 0;font-size:18px}
+p{color:var(--muted)}
+.hero p{max-width:560px}
+.actions,.social,.tags{display:flex;gap:10px;flex-wrap:wrap}
+.actions{margin:24px 0}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:11px 17px;border-radius:11px;font-weight:750;font-size:14px;
+  border:1px solid var(--line);background:var(--card);color:white;
+  transition:transform .2s,filter .2s;
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.primary{background:linear-gradient(100deg,#6d28d9,#2563eb);border:0}
+.whatsapp{background:#16a34a;border:0;color:white}
+.call{background:#f59e0b;border:0;color:#111}
+.portrait{
+  min-height:320px;border:1px solid #6543b7;border-radius:28px;
+  background:radial-gradient(circle at 50% 25%,#6635b8 0,transparent 40%),
+  linear-gradient(140deg,#101a36,#080b19);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:25px;box-shadow:0 0 55px #6d28d926;
+}
+.avatar{
+  width:110px;height:110px;border-radius:50%;display:grid;place-items:center;
+  font-size:38px;font-weight:900;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  border:4px solid #ffffff25;
+}
+.portrait p{margin:5px}
+.social{margin-top:15px}
+.social a,.tag{
+  border:1px solid var(--line);padding:6px 12px;border-radius:9px;
+  font-size:12px;background:var(--card);
+}
+section{padding:65px 0;border-top:1px solid #14203b}
+.section-intro{margin-top:0;max-width:650px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{
+  min-width:0;background:linear-gradient(145deg,#0e1830,#080e20);
+  border:1px solid var(--line);border-radius:18px;padding:21px;
+  transition:transform .2s,border-color .2s;
+}
+.card:hover{transform:translateY(-3px);border-color:#7655d5}
+.icon{font-size:28px;margin-bottom:10px}
+.status-pill{
+  display:inline-block;font-size:11px;padding:3px 9px;border-radius:6px;
+  font-weight:750;margin-bottom:8px;
+}
+.status-learning{background:#1e3a8a;color:#93c5fd}
+.status-progress{background:#78350f;color:#fde68a}
+.status-completed{background:#065f46;color:#a7f3d0}
+.tags{margin-top:12px}
+.timeline{border-left:2px solid #6844bf;margin-left:8px;padding-left:22px}
+.timeline .card{margin:18px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
+.form-control{
+  display:block;width:100%;padding:11px 13px;border-radius:10px;
+  border:1px solid var(--line);background:#080d20;color:white;
+  outline:none;
+}
+.form-control:focus{border-color:var(--blue)}
+textarea{resize:vertical}
+footer{
+  padding:28px 20px 100px;text-align:center;
+  color:var(--muted);border-top:1px solid var(--line);font-size:13px;
+}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:none}
+.bottom-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:90;
+  background:#050817f2;backdrop-filter:blur(10px);
+  border-top:1px solid var(--line);padding:9px 15px;
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+}
+.bottom-bar a{display:flex;align-items:center;justify-content:center;gap:5px}
+#top{
+  position:fixed;bottom:77px;right:16px;z-index:95;display:none;
+  width:42px;height:42px;border:0;border-radius:50%;color:white;
+  background:linear-gradient(135deg,var(--purple),#2563eb);
+  font-size:20px;
+}
+#preview{
+  position:fixed;inset:0;background:#02040cf2;z-index:200;
+  display:none;align-items:center;justify-content:center;padding:20px;
+}
+#preview .box{
+  max-width:500px;width:100%;background:var(--card);padding:25px;
+  border:1px solid var(--line);border-radius:18px;position:relative;
+}
+#close{position:absolute;top:8px;right:14px;background:none;color:white;border:0;font-size:28px}
+.empty{color:var(--muted);font-size:14px}
+@media(max-width:760px){
+  .navlinks{
+    display:none;position:absolute;top:59px;left:0;right:0;
+    background:#080d20;padding:18px 22px;border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:flex-start;
+  }
+  .navlinks.open{display:flex}
+  .menu{display:block}
+  .hero{grid-template-columns:1fr;padding-top:42px;gap:25px}
+  .portrait{min-height:250px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .grid{grid-template-columns:1fr}
+  .wrap{padding-left:16px;padding-right:16px}
+  section{padding:48px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <nav>
+    <a class="logo" href="#home">TK<span>.</span></a>
+    <button class="menu" id="menu" aria-label="Toggle navigation"
+      aria-expanded="false">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#journey">Journey</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero wrap" id="home">
+  <div>
+    <div class="eyebrow">WELCOME TO MY DIGITAL SPACE</div>
+    <h1>Hi, I'm<br><span class="gradient">Tarun Kumar</span></h1>
+    <strong>Aspiring AI Developer &amp; Technology Enthusiast</strong>
+    <p>
+      I am learning technology, artificial intelligence, programming,
+      and web development to build useful digital products and solve
+      real-world problems.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">Explore Projects ↗</a>
+      <a class="btn" href="#contact">Contact Me</a>
+    </div>
+    <div class="social">
+      <a href="https://www.instagram.com/tarunkumar.dev_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://github.com/t46004171-coder" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:tarunkumarjoshi11@gmail.com">Email Me</a>
+    </div>
+  </div>
+  <div class="portrait">
+    <div class="avatar">TK</div>
+    <h2 style="margin-top:18px">Learn • Build • Grow</h2>
+    <p>Turning ideas into modern web and app solutions.</p>
+    <span class="tag">TK by Tarun</span>
+  </div>
+</section>
+
+<section id="about">
+ <div class="wrap reveal">
+  <div class="eyebrow">01 / ABOUT ME</div>
+  <h2>Who I Am</h2>
+  <p class="section-intro">
+    I am an enthusiastic learner exploring coding, web applications,
+    Android development and artificial intelligence.
+  </p>
+  <div class="grid">
+   <article class="card"><div class="icon">🎯</div><h3>My Goal</h3><p>Build useful software tools and improve my development skills step by step.</p></article>
+   <article class="card"><div class="icon">💡</div><h3>My Interests</h3><p>AI assistants, prompt engineering, web design and Android applications.</p></article>
+   <article class="card"><div class="icon">📈</div><h3>My Approach</h3><p>Learn through practice, experimentation and building personal projects.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="wrap reveal">
+  <div class="eyebrow">02 / SKILLS &amp; TOOLS</div>
+  <h2>What I'm Learning</h2>
+  <p class="section-intro">My current learning areas. These are learning skills, not claims of professional mastery.</p>
+  <div class="grid" id="skillsGrid"></div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="wrap reveal">
+  <div class="eyebrow">03 / PROJECTS</div>
+  <h2>My Projects</h2>
+  <p class="section-intro">Personal projects and concepts. Select a project to read more.</p>
+  <div class="grid" id="projectGrid"></div>
+ </div>
+</section>
+
+<section id="journey">
+ <div class="wrap reveal">
+  <div class="eyebrow">04 / JOURNEY</div>
+  <h2>My Learning Timeline</h2>
+  <div class="timeline">
+   <article class="card"><h3>Programming Fundamentals</h3><p>Learning basic coding concepts, syntax and logical thinking.</p></article>
+   <article class="card"><h3>Web Development</h3><p>Practising HTML, CSS and JavaScript to create responsive websites.</p></article>
+   <article class="card"><h3>AI Tools &amp; Android Concepts</h3><p>Exploring AI-assisted learning and mobile application ideas.</p></article>
+   <article class="card"><h3>Portfolio &amp; Projects</h3><p>Building personal projects and improving my practical skills.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="wrap reveal">
+  <div class="eyebrow">05 / SERVICES</div>
+  <h2>What I Can Help With</h2>
+  <p class="section-intro">Beginner-level areas I am practising. I will be transparent about my experience.</p>
+  <div class="grid">
+   <article class="card"><div class="icon">🖥️</div><span class="status-pill status-learning">Beginner</span><h3>Simple Websites</h3><p>Practising basic personal web pages and responsive layouts.</p></article>
+   <article class="card"><div class="icon">🎨</div><span class="status-pill status-learning">Learning</span><h3>Portfolio Layouts</h3><p>Exploring modern layouts, typography and colour combinations.</p></article>
+   <article class="card"><div class="icon">🤖</div><span class="status-pill status-progress">Practising</span><h3>AI-Assisted Tasks</h3><p>Using AI tools to support learning, brainstorming and content structure.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="gallery">
+ <div class="wrap reveal">
+  <div class="eyebrow">06 / GALLERY</div>
+  <h2>Project Showcase</h2>
+  <p class="section-intro">Select a tile to view project details.</p>
+  <div class="grid" id="galleryGrid"></div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap reveal">
+  <div class="eyebrow">07 / CONTACT</div>
+  <h2>Let's Connect</h2>
+  <p class="section-intro">Reach me through email, WhatsApp or phone.</p>
+  <div class="contact-grid">
+   <article class="card">
+    <h3>Direct Contact</h3>
+    <p>For questions or collaboration enquiries, contact me here.</p>
+    <div style="margin:16px 0;display:flex;flex-direction:column;gap:10px">
+      <a id="callLink" class="btn call" href="tel:7850068566">📞 Call: 7850068566</a>
+      <a id="whatsappLink" class="btn whatsapp" href="https://wa.me/917850068566" target="_blank" rel="noopener noreferrer">💬 WhatsApp Chat</a>
+      <a id="emailLink" class="btn" href="mailto:tarunkumarjoshi11@gmail.com">✉️ Send Email</a>
+    </div>
+    <div class="social">
+      <a href="https://www.instagram.com/tarunkumar.dev_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://github.com/t46004171-coder" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+   </article>
+
+   <article class="card">
+    <h3>Send a Message</h3>
+    <p>This form opens your email app with a prepared message. It does not send automatically.</p>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="cName">Your Name</label>
+        <input id="cName" class="form-control" maxlength="100" required placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="cEmail">Your Email</label>
+        <input type="email" id="cEmail" class="form-control" maxlength="150" required placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label for="cMessage">Message</label>
+        <textarea id="cMessage" rows="4" maxlength="3000" class="form-control" required placeholder="Write your message..."></textarea>
+      </div>
+      <button type="submit" class="btn primary" style="width:100%">Prepare Email ↗</button>
+      <p id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+   </article>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+  © <span id="year"></span> Tarun Kumar · TK by Tarun · Learning • Building • Growing
+</footer>
+
+<div class="bottom-bar">
+  <a href="tel:7850068566" class="btn call">📞 CALL NOW</a>
+  <a href="https://wa.me/917850068566" class="btn whatsapp" target="_blank" rel="noopener noreferrer">💬 WHATSAPP</a>
+</div>
+
+<button id="top" aria-label="Back to top">↑</button>
+
+<div id="preview" role="dialog" aria-modal="true" aria-labelledby="previewTitle">
+ <div class="box">
+  <button id="close" aria-label="Close project details">×</button>
+  <div class="eyebrow">PROJECT DETAILS</div>
+  <h2 id="previewTitle" style="margin-top:10px"></h2>
+  <p id="previewText"></p>
+  <div class="tags" id="previewTags"></div>
+ </div>
+</div>
+
+<script>
+"use strict";
+
+// ===== PERSONAL WEBSITE SETTINGS =====
+const SITE_CONFIG = {
+  name: "Tarun Kumar",
+  brand: "TK by Tarun",
+  email: "tarunkumarjoshi11@gmail.com",
+  phone: "7850068566",
+  whatsapp: "917850068566",
+  instagram: "https://www.instagram.com/tarunkumar.dev_/",
+  github: "https://github.com/t46004171-coder"
+};
+
+// ===== SKILLS =====
+const SKILLS_DATA = [
+  {name:"HTML & CSS",status:"Learning",desc:"Practising web page structure and styling.",icon:"🌐"},
+  {name:"JavaScript",status:"Learning",desc:"Exploring interactive website features.",icon:"⚡"},
+  {name:"Python",status:"Learning",desc:"Studying programming fundamentals.",icon:"🐍"},
+  {name:"AI Tools & Prompts",status:"Practising",desc:"Using AI tools to support learning and ideas.",icon:"🤖"},
+  {name:"Android Apps",status:"Exploring",desc:"Learning about mobile interfaces and app concepts.",icon:"📱"},
+  {name:"Git & GitHub",status:"Learning",desc:"Exploring repositories and code sharing.",icon:"🐙"}
+];
+
+// ===== PROJECTS =====
+const PROJECTS_DATA = [
+  {
+    name:"FocusForge",icon:"🎯",category:"Study App",
+    status:"In Progress",statusClass:"status-progress",
+    desc:"A study-focus app concept for organising study sessions, subjects and daily tasks.",
+    tech:"Android · App Development"
+  },
+  {
+    name:"Battery Simulator",icon:"🔋",category:"Android App",
+    status:"Concept",statusClass:"status-learning",
+    desc:"An Android learning project exploring a battery information interface and user controls.",
+    tech:"Java / Kotlin · Android"
+  },
+  {
+    name:"SONY KI",icon:"🤖",category:"AI Assistant",
+    status:"In Progress",statusClass:"status-progress",
+    desc:"A personal AI assistant project concept focused on conversation, learning and task assistance.",
+    tech:"AI · Web · Android Concepts"
+  },
+  {
+    name:"TK Portfolio",icon:"🌌",category:"Website",
+    status:"Current Project",statusClass:"status-completed",
+    desc:"My personal portfolio website showcasing my interests, learning and projects.",
+    tech:"HTML · CSS · JavaScript"
+  }
+];
+
+// Create an element safely and add a class.
+function createElement(tag, className, text) {
+  const el = document.createElement(tag);
+  if (className) el.className = className;
+  if (text !== undefined) el.textContent = text;
+  return el;
+}
+
+// ===== YEAR =====
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// ===== SKILLS RENDERING =====
+const skillsGrid = document.getElementById("skillsGrid");
+
+SKILLS_DATA.forEach(skill => {
+  const card = createElement("article","card");
+  card.appendChild(createElement("div","icon",skill.icon));
+  card.appendChild(createElement("span","status-pill status-learning",skill.status));
+  card.appendChild(createElement("h3","",skill.name));
+  card.appendChild(createElement("p","",skill.desc));
+  skillsGrid.appendChild(card);
+});
+
+// ===== PROJECT DETAILS MODAL =====
+const preview = document.getElementById("preview");
+
+function openModal(index) {
+  const project = PROJECTS_DATA[index];
+  if (!project) return;
+
+  document.getElementById("previewTitle").textContent = project.name;
+  document.getElementById("previewText").textContent = project.desc;
+
+  const tags = document.getElementById("previewTags");
+  tags.replaceChildren();
+
+  [project.category, project.status, project.tech].forEach(label => {
+    tags.appendChild(createElement("span","tag",label));
+  });
+
+  preview.style.display = "flex";
+  document.getElementById("close").focus();
+}
+
+function closeModal() {
+  preview.style.display = "none";
+}
+
+document.getElementById("close").addEventListener("click",closeModal);
+
+preview.addEventListener("click",event => {
+  if (event.target === preview) closeModal();
+});
+
+document.addEventListener("keydown",event => {
+  if (event.key === "Escape") closeModal();
+});
+
+// ===== PROJECTS & GALLERY =====
+const projectGrid = document.getElementById("projectGrid");
+const galleryGrid = document.getElementById("galleryGrid");
+
+PROJECTS_DATA.forEach((project,index) => {
+  const card = createElement("article","card");
+  card.appendChild(createElement("div","icon",project.icon));
+  card.appendChild(createElement("span","status-pill "+project.statusClass,project.status));
+  card.appendChild(createElement("h3","",project.name));
+  card.appendChild(createElement("p","",project.desc));
+
+  const tags = createElement("div","tags");
+  tags.appendChild(createElement("span","tag",project.category));
+  tags.appendChild(createElement("span","tag",project.tech));
+  card.appendChild(tags);
+
+  const action = createElement("div","");
+  action.style.marginTop = "15px";
+  const details = createElement("button","btn","View Details ↗");
+  details.type = "button";
+  details.addEventListener("click",() => openModal(index));
+  action.appendChild(details);
+  card.appendChild(action);
+  projectGrid.appendChild(card);
+
+  const tile = createElement("article","card");
+  tile.tabIndex = 0;
+  tile.setAttribute("role","button");
+  tile.setAttribute("aria-label","View "+project.name+" details");
+  tile.style.cursor = "pointer";
+  tile.appendChild(createElement("div","icon",project.icon));
+  tile.appendChild(createElement("h3","",project.name));
+  tile.appendChild(createElement("p","",project.category));
+  tile.appendChild(createElement("span","tag","View Project ↗"));
+
+  tile.addEventListener("click",() => openModal(index));
+  tile.addEventListener("keydown",event => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openModal(index);
+    }
+  });
+  galleryGrid.appendChild(tile);
+});
+
+// ===== CONTACT DETAILS =====
+document.getElementById("callLink").href = "tel:" + SITE_CONFIG.phone;
+document.getElementById("whatsappLink").href = "https://wa.me/" + SITE_CONFIG.whatsapp;
+document.getElementById("emailLink").href = "mailto:" + SITE_CONFIG.email;
+
+// This form prepares an email. A backend is required for direct submission.
+document.getElementById("contactForm").addEventListener("submit",event => {
+  event.preventDefault();
+
+  const name = document.getElementById("cName").value.trim();
+  const email = document.getElementById("cEmail").value.trim();
+  const message = document.getElementById("cMessage").value.trim();
+  const status = document.getElementById("formStatus");
+
+  if (!name || !email || !message) {
+    status.textContent = "Please complete all fields.";
+    return;
+  }
+
+  const subject = "Portfolio message from " + name;
+  const body = message + "\n\nFrom: " + name + "\nEmail: " + email;
+  const mailto = "mailto:" + SITE_CONFIG.email +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+
+  status.textContent = "Opening your email app. Please review and send the message there.";
+  window.location.href = mailto;
+});
+
+// ===== MOBILE NAVIGATION =====
+const menuBtn = document.getElementById("menu");
+const navlinks = document.getElementById("navlinks");
+
+menuBtn.addEventListener("click",() => {
+  const isOpen = navlinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded",String(isOpen));
+  menuBtn.setAttribute("aria-label",isOpen ? "Close navigation" : "Open navigation");
+  menuBtn.textContent = isOpen ? "✕" : "☰";
+});
+
+navlinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click",() => {
+    navlinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded","false");
+    menuBtn.setAttribute("aria-label","Open navigation");
+    menuBtn.textContent = "☰";
+  });
+});
+
+// ===== BACK TO TOP =====
+const topBtn = document.getElementById("top");
+
+window.addEventListener("scroll",() => {
+  topBtn.style.display = window.scrollY > 400 ? "block" : "none";
+},{passive:true});
+
+topBtn.addEventListener("click",() => {
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+
+// ===== SCROLL REVEAL =====
+const revealItems = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.10});
+
+  revealItems.forEach(item => observer.observe(item));
+} else {
+  revealItems.forEach(item => item.classList.add("visible"));
+}
+</script>
+</body>
+</html>
